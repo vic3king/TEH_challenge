@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>App - Django</title>
+</head>
+
+<body>
+<div django-app="SimpleApp">        
+	<div>
+            <div>
+            <h1>TEH</h1>
+            <p>A simple aplication for the teh</p>
+            <form action="" method="post">
+            {% csrf_token %} <!-- csrf token for basic security -->
+                <div class="inputContainer">
+                  <input type="text" placeholder="First Name" name="first name" required>
+                  <input type="text" placeholder="Last Name" name="last name" required>
+                  <input type="text" placeholder="Age" name="age" required>
+                  <input type="text" placeholder="Job position" name="job position" required>
+              </div>
+                <div class="row">
+                    <button name="userAdd" type="submit">Add new User</button>
+                </div>
+                <br>
+                <br>
+
+            {% for user in users %}
+                    <span><b>FirstName:</b> {{ user.first_name }}</span><br>
+                    <span><b>Last Name:</b> {{ user.last_name }}</span><br>
+                    <span><b>Age:</b> {{ user.age }}</span><br>
+                    <span><b>Job Position:</b> {{ user.job_position }}</span><br><br>
+            {% endfor %}
+            </form>
+            </div>
+
+ </div>
+</div>
+</body>
+</html>
